@@ -37,7 +37,11 @@ function deleteFunc(id) {
         .remove({ id: parsedId })
         .write()
 }
-
+function deleteAll() {
+    return db.get('notes')
+        .remove()
+        .write()
+}
 function isIdExist(dbTemp, id) {
     const index = dbTemp.findIndex((element) => {
         const matchResult = element.id == id
@@ -52,5 +56,6 @@ module.exports = {
     edit,
     deleteFunc,
     isIdExist,
-    getOne
+    getOne,
+    deleteAll
 }
