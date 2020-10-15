@@ -17,7 +17,4 @@ app.delete('/notes', (req, res) => {
     }
 })
 
-app.delete('/notes', (req, res) => {
-
-}
 module.exports = app
