@@ -3,8 +3,12 @@ const app = express.Router()
 const db = require('../controller/dbController')
 
 app.get('/notes', (req, res) => {
-    const result = db.get()
-    res.send(result)
+    const id = req.query.id
+    if (id) {
+        res.send(db.getOne(id))
+    } else {
+        res.send(db.get())
+    }
 })
 
 module.exports = app

@@ -3,6 +3,10 @@
     {
       "id": 4,
       "note": "this is my 4th note"
+    },
+    {
+      "id": 1,
+      "note": "this is my first note"
     }
   ]
 }

@@ -10,6 +10,14 @@ function get() {
     return db.get('notes')
         .value()
 }
+
+function getOne(id) {
+    const parsedId = parseInt(id)
+    return db.get('notes')
+        .find({ id: parsedId })
+        .value()
+}
+
 function add(body) {
     return db.get('notes')
         .push(body)
@@ -43,5 +51,6 @@ module.exports = {
     add,
     edit,
     deleteFunc,
-    isIdExist
+    isIdExist,
+    getOne
 }
